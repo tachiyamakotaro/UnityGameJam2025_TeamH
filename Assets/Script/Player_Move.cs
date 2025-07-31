@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Player_Move : MonoBehaviour
@@ -29,9 +30,17 @@ public class Player_Move : MonoBehaviour
         {
             transform.Translate(Vector3.back * speed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
+        //プレイヤーの移動制限。画面外に移動しなくなる
+        float X = transform.position.x;
+        float Y = transform.position.y;
+        X =Mathf.Clamp(X, -8.0f, 8.0f);
+        Y = Mathf.Clamp(Y, -4.0f, 6.0f);
+        transform.position = new Vector3(X,Y, transform.position.z);
+       
+       // transform.position=new Vector3(transform.position.x,Y,transform.position.z);
     }
 }
