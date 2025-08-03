@@ -30,7 +30,7 @@ public class Shooting : MonoBehaviour
                 bulletRb.AddForce(transform.right * shotSpeed);
 
                 time = 0.0f;
-                Destroy(bullet, 3.0f);
+                Destroy(bullet, 1.0f);
             }
         }
     }

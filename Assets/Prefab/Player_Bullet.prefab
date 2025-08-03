@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3151184296331902969}
   - component: {fileID: 6641333265697738788}
   - component: {fileID: 695707507468126640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player_Bullet
-  m_TagString: Untagged
+  m_TagString: Player_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
