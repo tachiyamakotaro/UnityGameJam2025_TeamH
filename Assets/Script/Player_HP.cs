@@ -6,7 +6,6 @@ public class Player_HP : MonoBehaviour
 {
     [SerializeField, Header("プレイヤーの体力")]
     private int hp;
-    [SerializeField, Header("プレイヤーの無敵時間")]
     private float invincibleTime;
     private int invincibleState = 0;
     private BoxCollider BoxCollider;
