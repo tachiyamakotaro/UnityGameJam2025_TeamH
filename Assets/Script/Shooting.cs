@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
         time += Time.deltaTime;
         if (time >= 0.2f)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.Mouse0))
             {
             
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
