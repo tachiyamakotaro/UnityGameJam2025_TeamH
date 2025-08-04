@@ -23,12 +23,17 @@ public class Player_HP : MonoBehaviour
         //ぶつかったオブジェクトのTagにEnemy_Bulletという名前があったら
         if (other.gameObject.tag == "Enemy_Bullet")
         {
-            hp -= 1;
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-            }
+            hp --;
+            
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag=="Enemy")
+        {
+            hp--;
+        }
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
