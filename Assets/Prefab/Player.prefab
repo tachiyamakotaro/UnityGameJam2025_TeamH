@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
+  invincibleTime: 2
 --- !u!1001 &9069580955499183359
 PrefabInstance:
   m_ObjectHideFlags: 0
