@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Move : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     public float speed = 1.0f;
     public float distance = 3.0f;
@@ -16,6 +16,6 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPos + new Vector3(Mathf.Cos(Time.time * speed), 0, Mathf.Sin(Time.time * speed)) * distance;
+        transform.position = startPos + Vector3.up * Mathf.Sin(Time.time * speed) * distance;
     }
 }
