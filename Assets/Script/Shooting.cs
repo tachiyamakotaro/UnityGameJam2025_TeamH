@@ -24,9 +24,9 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
-            
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
                 Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+
                 bulletRb.AddForce(transform.right * shotSpeed);
 
                 time = 0.0f;

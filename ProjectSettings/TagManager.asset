@@ -16,8 +16,8 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
-  - 
+  - Player_Bullet
+  - Enemy_Bullet
   - 
   - 
   - 
