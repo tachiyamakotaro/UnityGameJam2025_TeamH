@@ -1,35 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-    Rigidbody rb;
-    float speed = 3.0f;
+    //Rigidbody rb;
+   [SerializeField,Header("移動速度")] 
+    private float speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb=GetComponent<Rigidbody>();
+        //rb=GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
-            rb.velocity= transform.up*speed;
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            rb.velocity = -transform.up * speed;
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            rb.velocity = -transform.right * speed;
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
         }
-        if(Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            rb.velocity = transform.right * speed;
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
+        //プレイヤーの移動制限。画面外に移動しなくなる
+        float X = transform.position.x;
+        float Y = transform.position.y;
+        X =Mathf.Clamp(X, -8.0f, 8.0f);
+        Y = Mathf.Clamp(Y, -4.0f, 6.0f);
+        transform.position = new Vector3(X,Y, transform.position.z);
+       
+       // transform.position=new Vector3(transform.position.x,Y,transform.position.z);
     }
 }
