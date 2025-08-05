@@ -50,9 +50,9 @@ public class Player_HP : MonoBehaviour
         }
         else if (invincibleState == 0)
         {
+            invincibleTime = 0.0f;
             boxCollider.enabled = true; //無敵状態でない時は当たり判定を有効にする
             foreach (var blink in meshRenderers) blink.enabled = true; // メッシュを表示する
-            invincibleTime = 0.0f;
         }
     }
 
