@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     //Rigidbody rb;
-   [SerializeField,Header("ˆÚ“®‘¬“x")] 
+   [SerializeField,Header("ç§»å‹•é€Ÿåº¦")] 
     private float speed;
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class Player_Move : MonoBehaviour
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
-        //ƒvƒŒƒCƒ„[‚ÌˆÚ“®§ŒÀB‰æ–ÊŠO‚ÉˆÚ“®‚µ‚È‚­‚È‚é
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•åˆ¶é™ã€‚ç”»é¢å¤–ã«ç§»å‹•ã—ãªããªã‚‹
         float X = transform.position.x;
         float Y = transform.position.y;
         X =Mathf.Clamp(X, -8.0f, 8.0f);
