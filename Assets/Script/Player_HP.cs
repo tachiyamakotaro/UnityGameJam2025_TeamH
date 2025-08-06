@@ -30,6 +30,7 @@ public class Player_HP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (invincibleState == 1)
         {
             if(invincibleTime<=0.0f)
@@ -70,7 +71,7 @@ public class Player_HP : MonoBehaviour
             hp--;
             invincibleState = 1;
         }
-        
+
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -101,4 +102,8 @@ public class Player_HP : MonoBehaviour
 
     }
 
+    public int GetHP()
+    {
+        return hp;
+    }
 }
