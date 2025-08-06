@@ -19,7 +19,7 @@ public class TitleController : MonoBehaviour
 
     public void onClickStarButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("InGameScene");
     }
 }
 
