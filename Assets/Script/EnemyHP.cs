@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class EnemyHP : MonoBehaviour
 {
@@ -28,7 +30,7 @@ public class EnemyHP : MonoBehaviour
             hp -= 1;
             if (hp <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene("GameClear"); //体力が0になったらゲームオーバー画面に遷移
             }
             Destroy(other.gameObject);
         }
