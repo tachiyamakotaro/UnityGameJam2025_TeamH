@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class Player_HP : MonoBehaviour
 {
@@ -74,7 +75,8 @@ public class Player_HP : MonoBehaviour
 
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            SceneManager.LoadScene("GameOver"); //体力が0になったらゲームオーバー画面に遷移
         }
     }
 
