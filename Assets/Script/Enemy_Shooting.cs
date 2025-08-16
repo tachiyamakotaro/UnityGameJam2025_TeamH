@@ -21,7 +21,7 @@ public class Enemy_Shooting : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 0.5f)
+        if (time >= 1.0f)
         {
             
 
@@ -32,7 +32,7 @@ public class Enemy_Shooting : MonoBehaviour
             bulletRb.AddForce(-transform.right * shotSpeed);
 
                 time = 0.0f;
-                Destroy(bullet, 3.0f);
+                Destroy(bullet, 2.0f);
            
         }
     }

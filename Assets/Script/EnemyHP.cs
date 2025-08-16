@@ -9,6 +9,8 @@ public class EnemyHP : MonoBehaviour
     private int hp = 3;
     private MeshRenderer[] meshRenderers;
     private Collider[] colliders;
+
+    [SerializeField] private AudioClip DamegeClip; // ダメージ音をInspectorからセット
     // Start is called before the first frame update
     void Start()
     {
@@ -21,22 +23,26 @@ public class EnemyHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //OnBecameInvisible();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player_Bullet")
         {
             hp -= 1;
+            AudioManager.instance.PlaySE(DamegeClip); // 敵のダメージ音を鳴らす
             if (hp <= 0)
             {
-                SceneManager.LoadScene("GameClear"); //体力が0になったらゲームオーバー画面に遷移
+                //SceneManager.LoadScene("GameClear"); //体力が0になったらゲームオーバー画面に遷移
+                OnDeath();
             }
             Destroy(other.gameObject);
         }
     }
     private void OnDeath()
     {
+       
+
         // メッシュを非表示にする
         foreach (var mr in meshRenderers)
         {
@@ -49,6 +55,7 @@ public class EnemyHP : MonoBehaviour
             col.enabled = false;
         }
 
+        Destroy(gameObject); // 1秒後にオブジェクトを削除
         // 必要があればスクリプトや動きを止める処理も追加
         // 例: this.enabled = false;
     }

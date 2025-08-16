@@ -19,6 +19,8 @@ public class Player_HP : MonoBehaviour
     //// MeshRenderer[]は配列で、複数のMeshRendererを格納できる
     //// このコードでは、プレイヤーオブジェクトとその子供オブジェクトにあるMeshRendererを全て取得する
     private MeshRenderer[] meshRenderers;
+
+    [SerializeField] private AudioClip DamegeClip; // ダメージ音をInspectorからセット
     //Start is called before the first frame update
     void Start()
     {
@@ -65,11 +67,13 @@ public class Player_HP : MonoBehaviour
         {
             hp--;
             invincibleState = 1;
+            AudioManager.instance.PlaySE(DamegeClip); // 敵のダメージ音を鳴らす
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Enemy")
         {
             hp--;
+            AudioManager.instance.PlaySE(DamegeClip); // 敵のダメージ音を鳴らす
             invincibleState = 1;
         }
 
