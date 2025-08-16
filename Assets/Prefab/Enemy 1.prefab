@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 524193240860288356, guid: 207703c989ae22d4f906398214912499, type: 3}
-  shotSpeed: 200
+  shotSpeed: 500
 --- !u!1 &8990505042390396462
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 971885662077054946}
   - component: {fileID: 1716354174526250784}
   - component: {fileID: 6545058349290052003}
-  - component: {fileID: 3301342895203122970}
   - component: {fileID: 5315238924187120505}
   - component: {fileID: 5491841192756050244}
   m_Layer: 7
@@ -169,19 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0677fa50616a48c40b3d8057dbd684d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3301342895203122970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8990505042390396462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f1b95970260b441aaef2c6c5685940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE: {fileID: 8300000, guid: 546647282f646dc4c8604b7e17c332ad, type: 3}
+  DamegeClip: {fileID: 8300000, guid: 546647282f646dc4c8604b7e17c332ad, type: 3}
 --- !u!82 &5315238924187120505
 AudioSource:
   m_ObjectHideFlags: 0
