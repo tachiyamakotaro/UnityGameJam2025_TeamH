@@ -21,7 +21,7 @@ public class EnemyHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //OnBecameInvisible();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -30,7 +30,8 @@ public class EnemyHP : MonoBehaviour
             hp -= 1;
             if (hp <= 0)
             {
-                SceneManager.LoadScene("GameClear"); //体力が0になったらゲームオーバー画面に遷移
+                //SceneManager.LoadScene("GameClear"); //体力が0になったらゲームオーバー画面に遷移
+                OnDeath();
             }
             Destroy(other.gameObject);
         }
@@ -49,6 +50,7 @@ public class EnemyHP : MonoBehaviour
             col.enabled = false;
         }
 
+        Destroy(gameObject); // 1秒後にオブジェクトを削除
         // 必要があればスクリプトや動きを止める処理も追加
         // 例: this.enabled = false;
     }
