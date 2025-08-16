@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &343649547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343649549}
+  - component: {fileID: 343649548}
+  m_Layer: 0
+  m_Name: DamegeSoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &343649548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343649547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa712b9d5f4aaad41a53c78022b0c438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &343649549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343649547}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.2322, y: 37.916267, z: -126.202286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386897332
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +177,6 @@ GameObject:
   m_Component:
   - component: {fileID: 386897334}
   - component: {fileID: 386897333}
-  - component: {fileID: 386897335}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -218,19 +261,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &386897335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386897332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f1b95970260b441aaef2c6c5685940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE: {fileID: 0}
 --- !u!1 &578275382
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +557,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa7fa642b42da434383aa0b229e3b0db, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
@@ -858,7 +888,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 546647282f646dc4c8604b7e17c332ad, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -943,19 +973,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1882224398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520208828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94a37288f4ab63478ca73cf68798a26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE: {fileID: 8300000, guid: 546647282f646dc4c8604b7e17c332ad, type: 3}
 --- !u!1001 &3268072365522776588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1008,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6384448316935785935, guid: a3b4d98cb4aae5e46834acb512f93015, type: 3}
+      propertyPath: DamegeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 546647282f646dc4c8604b7e17c332ad, type: 3}
     - target: {fileID: 8328560756145878121, guid: a3b4d98cb4aae5e46834acb512f93015, type: 3}
       propertyPath: m_Size.z
       value: 3
@@ -1019,9 +1040,6 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 1261567166}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5819738342717934691, guid: a3b4d98cb4aae5e46834acb512f93015, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1882224398}
     - targetCorrespondingSourceObject: {fileID: 5819738342717934691, guid: a3b4d98cb4aae5e46834acb512f93015, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1882224397}
@@ -1155,3 +1173,4 @@ SceneRoots:
   - {fileID: 1569339029}
   - {fileID: 578275384}
   - {fileID: 1717809872}
+  - {fileID: 343649549}
