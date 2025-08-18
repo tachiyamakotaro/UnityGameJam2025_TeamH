@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject EnemyPrefab; // エネミーのプレハブ
-    private float spawnInterval=5.0f; // 敵のスポーン間隔
+    private float spawnInterval=3.0f; // 敵のスポーン間隔
     private float spawnTimer=0.0f; // スポーンタイマー
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
             //enemyをインスタンス化する(生成する)
             GameObject enemy=Instantiate(EnemyPrefab);
             // ランダムな位置に配置
-            enemy.transform.position=new Vector3(Random.Range(-10.0f, 10.0f),Random.Range(-10.0f, 10.0f),0.0f); 
+            enemy.transform.position=new Vector3(Random.Range(0.0f, 6.0f),Random.Range(-3.0f, 4.0f),0.0f); 
             spawnTimer = 0.0f; // タイマーをリセット
         }
     }

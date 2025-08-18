@@ -55,6 +55,11 @@ public class EnemyHP : MonoBehaviour
             col.enabled = false;
         }
 
+        if(Enemy_KillCount.instance!=null)
+        {
+            Enemy_KillCount.instance.AddKillCount(); // 敵が倒されたときのカウントを増やす
+        }
+
         Destroy(gameObject); // 1秒後にオブジェクトを削除
         // 必要があればスクリプトや動きを止める処理も追加
         // 例: this.enabled = false;
